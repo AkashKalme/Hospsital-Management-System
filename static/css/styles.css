@@ -1,0 +1,113 @@
+body
+{
+    background-size: cover;
+}
+
+body
+{
+    margin: auto;
+    margin: 5rem 30rem;
+    padding: 2rem 6rem;
+    border-color: grey;
+    border: solid;
+    border-radius: 10%;
+    border-width: 5px;
+    text-align: center;
+}
+
+.login 
+{
+    background-color: #04AA6D;
+    color: white;
+    text-decoration: none;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.5;
+}
+
+.login:hover
+{
+    opacity: 0.9;
+}
+
+hr
+{
+    border: none;
+}
+
+input[type=text], input[type=password], input[type=email] 
+{
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+    opacity: 0.3;
+}
+
+input[type=text]:focus, input[type=password]:focus, input[type=email]:focus
+{
+    background-color: #ddd;
+    outline: none;
+    opacity: 0.8;
+}
+
+label
+{
+    vertical-align: left;
+    padding-left: 2px;
+}
+
+input
+{
+    vertical-align: left;
+}
+
+.add_info
+{
+    text-align: left;
+}
+
+h1, h2
+{
+    color: #ef233c;
+}
+
+
+:required::after
+{
+    content: " *";
+    color: red;
+}
+
+table
+{
+    margin: auto;
+    padding: 20px;
+    column-width: 33%;
+    align-items: center;
+}
+
+td 
+{
+    padding: 5px 10px;
+    border-top-width: 0;
+    border-left-width: 0;
+}
+
+th 
+{
+    align-items: center;
+    position: sticky;
+    top: 0;
+    vertical-align: bottom;
+}
+
+.GME input
+{
+    padding: 5px 5px;
+}

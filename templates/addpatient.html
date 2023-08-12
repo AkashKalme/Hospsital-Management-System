@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>Add Patient</title>
+</head>
+{% for i in messages %}
+{% if i.tags == "error" %}
+    <div class="alert alert-danger alert-dismissible fade show" role="alert" style="margin: 0px;">
+    <strong>{{i.tags}} !</strong> {{i}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+{% else %}
+<div class="alert alert-{{i.tags}} alert-dismissible fade show" role="alert" style="margin: 0px;">
+    <strong>{{i.tags}} !</strong> {{i}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+{% endif %}
+{% endfor %}
+<style>
+        @import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background: #fdfcfc;
+  color: rgba(0, 0, 0, 0.9);
+  font-family: "Work Sans", sans-serif;
+  font-size: 16px;
+  /* text-align: center; */
+  line-height: 1.4;
+}
+
+main {
+  height: 100%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section {
+  max-width: 520px;
+  padding: 0 1em;
+}
+
+h1 {
+  font-size: 2.5em;
+  font-weight: 500;
+  margin: 0 auto 0.5em;
+  line-height: 1.2;
+}
+
+p {
+  font-weight: 300;
+}
+
+hr {
+  border: 0;
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.4);
+  margin-bottom: 2em;
+}
+</style>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'home' %}">HMS</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'about' %}">About</a>
+                    </li>
+                    {% comment %} <li class="nav-item">
+                        <a class="nav-link" href="{% url 'contact' %}">Contact Us</a>
+                    </li> {% endcomment %}
+                </ul>
+                <button type="button" class="btn btn-outline-success" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal">
+                    Logout
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Alert !</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                Are you sure to logout ?
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                                <a href="{% url 'logout' %}">
+                                    <button type="button" class="btn btn-success">Logout</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container my-3">
+        <form action="{% url 'savepatient' %}" method="post" autocomplete="off">
+            {% csrf_token %}
+            <div style="padding:10px;border-bottom: 1px solid black;text-align: center;">
+                <h3>Patient Details : </h3>
+            </div>
+            <div class="container" style="margin-left: 20px;">
+                <div class="mb-3" style="margin: 20px 0px;display: flex;">
+                    <label for="gen" style="display: inline;margin: 10px;">Gender : </label>
+                    <select name="gender" required style="width: 50%;" class="form-control" id="gen">
+                        <option value="TransGender">-- Select --</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="TransGender">TransGender</option>
+                    </select>
+                </div>
+                <div style="display: flex;align-items: center;justify-self: center">
+                    <span class="form-floating mb-3" style="margin: 0 10px;">Patient Name : </span>
+                    <div class="form-floating mb-3" style="margin: 0 10px;">
+                        <input type="text" class="form-control" id="floatingInput" name="fname" required
+                            placeholder="...">
+                        <label for="floatingInput">First Name</label>
+                    </div>
+                    <div class="form-floating mb-3" style="margin: 0 10px;">
+                        <input type="text" class="form-control" id="floatingPassword" name="lname" required
+                            placeholder="...">
+                        <label for="floatingPassword">Last Name</label>
+                    </div>
+                </div>
+                <div class="mb-3" style="margin: 10px 0px;display: flex;">
+                    <label for="email" style="display: inline;margin: 10px;">Email Address : </label>
+                    <input type="text" style="width: 50%;" class="form-control" required name="email" id="email">
+                </div>
+                <div class="mb-3" style="margin: 10px 0px;display: flex;">
+                    <label for="date" style="display: inline;margin: 10px;">Date Of Birth : </label>
+                    <input type="date" style="width: 50%;" class="form-control" required name="dob" id="date">
+                </div>
+
+                <div class="mb-3" style="margin: 10px 0px;display: flex;">
+                    <label for="reason" style="display: inline;margin: 10px;">Address : </label>
+                    <textarea name="address" class="form-control" required id="reason" cols="20" style="width: 50%;"
+                        rows="1"></textarea>
+                </div>
+
+                <div class="mb-3" style="margin: 10px 0px;display: flex;">
+                    <label for="height" style="display: inline;margin: 10px;">Patient height (cm's) : </label>
+                    <input type="number" style="width: 50%;" class="form-control" required name="height"
+                        placeholder="ex : 176" id="height">
+                </div>
+                <div class="mb-3" style="margin: 10px 0px;display: flex;">
+                    <label for="weight" style="display: inline;margin: 10px;">Patient weight (kg's) : </label>
+                    <input type="number" style="width: 50%;" class="form-control" required name="weight"
+                        placeholder="ex : 75" id="weight">
+                </div>
+                <div class="mb-3" style="margin: 10px 0px;display: flex;">
+                    <label for="reason" style="display: inline;margin: 10px;">Reason to visit doctor : </label>
+                    <textarea name="reason" class="form-control" required id="reason" cols="20" style="width: 50%;"
+                        rows="5"></textarea>
+                </div>
+                <button type="submit" class="btn btn-success"> Submit </button>
+            </div>
+        </form>
+    </div>
+    
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+    <footer id="sticky-footer" class="flex-shrink-0 py-4 bg-dark text-white-50" style="margin-top: 3rem ;">
+        <div class="container text-center">
+            <small>Copyright &copy; 2022 | All Rights Reserved.</small>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,108 @@
+@import url('http://fonts.googleeapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+h1
+{
+color: blue;
+font-size: large;
+font-family: Arial, Helvetica, sans-serif;
+text-align: center;
+}
+
+.Background-image img
+{
+  position: relative;
+}
+
+.topnav {
+    background-color: #333;
+    position: fixed;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    overflow: hidden;
+
+    
+  }
+  
+ 
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    font-family: 'Poppins';
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+    .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  .topnav a.active {
+    background-color: #248ef1;
+    color: white;
+  }
+
+  #Home
+  {
+    background-image: linear-gradient(rgba(9,5,54,0.3) , rgba(5,4,46,0.7))url("images/i1.jpg");
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+ 
+  
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: #ffffff ;
+    font-family: 'Name-1',sans-serif;
+}
+.wrapper{
+    margin-top: 10%;
+}
+.wrapper h1{
+    font-family: 'Allura',cursive;
+    font-size: 52px;
+    margin-bottom: 60px;
+    text-align: center;
+
+}
+.team{
+    display: flex;
+    text-align: center;
+    width: auto;
+    justify-content: center;
+    
+}
+.team .team_member{
+    background: #2F4F4F;
+    margin:5px ;
+    margin-bottom: 50px;
+    width: 300px;
+    padding: 20px;
+    line-height: 20px;
+    color: #8e8b8b;
+    position: relative;
+}
+.team .team_member h3{
+    color: #81c644;
+    font-size: 26px;
+    margin: 50px;
+}
+.team .team_member p.role{
+    color: antiquewhite;
+    font-size: 12px;
+    text-transform: uppercase;
+    margin: 12px 0;
+}

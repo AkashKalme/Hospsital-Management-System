@@ -1,0 +1,92 @@
+body
+{
+    background-image: url(i10.jpeg);
+    font-family: "Montserrat";
+    font-weight: 600;
+}
+
+form
+{
+    margin: 6rem 6rem;
+    padding: 2rem 3rem;
+    border: solid;
+    border-width: 3px;
+    border-radius: 2rem;
+    border-color: red;
+}
+
+h1, h2, h3, h4, h5, h6 
+{
+    font-family: "Montserrat-Bold";
+    text-align: center;
+    color: green;
+    font-weight: bolder;
+}
+
+h1
+{
+    font-weight: 900;
+    color: red;
+}
+
+hr
+{
+    border-style: dotted none none;
+    border-color: grey;
+    border-width: 5px;
+    height: 1px;
+    width: 10%;
+    padding: 0% 50% 0% 50%;
+}
+
+.row
+{
+    padding-bottom: 0.2rem;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button 
+{ 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+
+input, select
+{
+    padding: 0.18rem 0.3rem;
+    margin-left: 1rem;
+    border-radius: 0.4rem;
+}
+
+.btn 
+{
+    -ms-grid-row-align: center;
+    background: #d93434;
+    background-image: -webkit-linear-gradient(top, #d93434, #b82b7d);
+    background-image: -moz-linear-gradient(top, #d93434, #b82b7d);
+    background-image: -ms-linear-gradient(top, #d93434, #b82b7d);
+    background-image: -o-linear-gradient(top, #d93434, #b82b7d);
+    background-image: linear-gradient(to bottom, #d93434, #b82b7d);
+    -webkit-border-radius: 28;
+    -moz-border-radius: 28;
+    border-radius: 28px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 20px;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    margin: 1.2% 14%;
+}
+
+.btn:hover 
+{
+    background: #3cb0fd;
+    background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+    text-decoration: none;
+}

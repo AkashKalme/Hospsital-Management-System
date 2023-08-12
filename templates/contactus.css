@@ -1,0 +1,80 @@
+.body{
+    background-color:red;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+.contact{
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-size: cover;
+}
+.contact .content{
+    max-width: 800px;
+    text-align: center;
+}
+.contact .content h2{
+    font-size: 36px;
+    font-weight: 500;
+    color: rgb(9, 15, 11);
+}
+.contact .content p{
+    font-size: 15px;
+    font-weight: 500;
+    color:rgb(17, 17, 17)
+}
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:30px ;
+    /* margin-left: 100px; */
+    justify-content: space-between;
+
+}
+.container .contactInfo{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+.container .contactInfo .box{
+    position: relative;
+    padding: 20px 0;
+    display: flex;
+}
+.container .contactInfo .box .icon{
+    min-width: 6px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 22px;
+}
+.container .contactInfo .box .text{
+    position: relative;
+    display: flex;
+    margin-left: 20px;
+    font-size: 16px;
+    color: rgb(15, 14, 14);
+    flex-direction: column;
+    font-weight: 300;
+}
+.container .contactInfo .box .text h4{
+    text-align: left;
+}
+#box2{
+    align-items: center;
+}
+#Contacts{
+    display: inline;
+    background-color: red;
+}
