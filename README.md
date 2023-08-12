@@ -16,3 +16,4 @@ Data Privacy and Security: Ensuring the utmost security of patient data is a top
 Print Records Effortlessly: Print any patient's record effortlessly with just one click. Generate a PDF file as a soft copy as well.
 
 ### Screenshots
+![Screenshot (1346)](https://github.com/AkashKalme/Hospsital-Management-System/assets/94354745/e519768b-bee9-42d2-bc06-fee9ed7e5a8d)
