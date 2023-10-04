@@ -3,7 +3,7 @@
 
 Welcome to the Hospital Management System, a comprehensive and user-friendly solution designed to efficiently manage and maintain the medical records and histories of patients within our healthcare facility. This innovative system is aimed at improving the quality of patient care, enhancing medical decision-making, and streamlining administrative processes.
 
-### Goals of Project
+### Features of Project
 
 **Centralized Record Keeping**: The project aims to create a centralized repository for storing and managing patient medical records, treatment histories, diagnostic reports, prescriptions, and other pertinent health-related information.
 
